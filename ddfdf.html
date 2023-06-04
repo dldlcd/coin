@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="quantity-display"></h2>
+    
+    <h2 id="quantity-display2"></h2>
+    
+    <h2 id="quantity-display3"></h2>
+    <script>
+
+        function increaseQuantity(initialQuantity, increasePerSecond) {
+            let quantity = initialQuantity;
+            const quantityDisplay = document.getElementById("quantity-display");
+
+            setInterval(() => {
+                quantity += increasePerSecond;
+                quantityDisplay.textContent = "옵티미즘 수량은 " + (quantity+644594782) + " op 입니다";
+            }, 1000);
+
+            window.addEventListener("beforeunload", () => {
+                localStorage.setItem("quantity", quantity);
+            });
+
+            const storedQuantity = localStorage.getItem("quantity");
+            if (storedQuantity) {
+                quantity = parseInt(storedQuantity);
+                localStorage.removeItem("quantity"); // localStorage에서 값을 제거합니다.
+                quantityDisplay.textContent = quantity;
+            }
+        }
+
+        increaseQuantity(0, 10);
+
+        function increaseQuantity2(initialQuantity, increasePerSecond) {
+            let quantity = initialQuantity;
+            const quantityDisplay = document.getElementById("quantity-display2");
+
+            setInterval(() => {
+                quantity += increasePerSecond;
+                quantityDisplay.textContent = "아발란체 " + (quantity+344174715) + " avax 입니다";
+            }, 1000);
+
+            window.addEventListener("beforeunload", () => {
+                localStorage.setItem("quantity", quantity);
+            });
+
+            const storedQuantity = localStorage.getItem("quantity");
+            if (storedQuantity) {
+                quantity = parseInt(storedQuantity);
+                localStorage.removeItem("quantity"); // localStorage에서 값을 제거합니다.
+                quantityDisplay.textContent = quantity;
+            }
+        }
+
+        increaseQuantity2(0, 2.5);
+
+        function increaseQuantity3(initialQuantity, increasePerSecond) {
+            let quantity = initialQuantity;
+            const quantityDisplay = document.getElementById("quantity-display3");
+
+            setInterval(() => {
+                quantity += increasePerSecond;
+                quantityDisplay.textContent = "니어프로토콜 " + (quantity+912147996) + " near 입니다";
+            }, 1000);
+
+            window.addEventListener("beforeunload", () => {
+                localStorage.setItem("quantity", quantity);
+            });
+
+            const storedQuantity = localStorage.getItem("quantity");
+            if (storedQuantity) {
+                quantity = parseInt(storedQuantity);
+                localStorage.removeItem("quantity"); // localStorage에서 값을 제거합니다.
+                quantityDisplay.textContent = quantity;
+            }
+        }
+
+        increaseQuantity3(0, 5.4);
+
+        
+    </script>
+</body>
+</html>
